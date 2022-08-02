@@ -7,7 +7,9 @@ use App\controllers\pageControllers;
 class Router{
     public static function rout(){
         $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-           $r->addRoute('GET', '/', ['App\controllers\pageControllers', 'index']);
+            $r->addRoute('GET', '/', ['App\controllers\pageControllers', 'index']);
+            $r->addRoute('GET', '/add', ['App\controllers\pageControllers', 'add']);
+            $r->addRoute('GET', '/about', ['App\controllers\pageControllers', 'about']);
             // {id} must be a number (\d+)
            // $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
             // The /{title} suffix is optional
@@ -26,7 +28,7 @@ class Router{
         $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
         switch ($routeInfo[0]) {
             case FastRoute\Dispatcher::NOT_FOUND:
-                // ... 404 Not Found
+                echo "404";
                 break;
             case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
                 $allowedMethods = $routeInfo[1];

@@ -1,5 +1,5 @@
 <?php $this->layout('template', ['title' => 'МоиЗаметки']) ?>
-<a href="create.php" class="new">Добавить</a>
+<a href="add" class="new">Добавить</a>
 <table>
     <tr class="table__head">
         <td>#</td>

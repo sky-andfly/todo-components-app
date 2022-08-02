@@ -23,7 +23,7 @@ header a{
     text-decoration: none;
 }
 section{
-    padding: 50px;
+    /*padding: 50px;*/
 }
 .section__content{
     width: 1000px;

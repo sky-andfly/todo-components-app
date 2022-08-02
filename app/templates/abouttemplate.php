@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
+<header style="background-color: rgb(0 0 4); color: #ffffff;">
     <h1>моиЗАМЕТКИ</h1>
     <a href="/">Главная страница</a>
     <a href="/about">О сайте</a>
