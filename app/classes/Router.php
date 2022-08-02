@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\clasess;
 use FastRoute;
 use App\controllers\pageControllers;
 
@@ -10,6 +10,7 @@ class Router{
             $r->addRoute('GET', '/', ['App\controllers\pageControllers', 'index']);
             $r->addRoute('GET', '/add', ['App\controllers\pageControllers', 'add']);
             $r->addRoute('GET', '/about', ['App\controllers\pageControllers', 'about']);
+            $r->addRoute('GET', '/page/{id:\d+}', ['App\controllers\pageControllers', 'page']);
             // {id} must be a number (\d+)
            // $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
             // The /{title} suffix is optional

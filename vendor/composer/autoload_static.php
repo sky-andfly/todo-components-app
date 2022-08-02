@@ -26,8 +26,10 @@ class ComposerStaticInit4c82e931099e7a625249672c6c41213f
         ),
         'A' => 
         array (
+            'Aura\\SqlQuery\\' => 14,
             'App\\controllers\\' => 16,
-            'App\\' => 4,
+            'App\\clasess\\builder\\' => 20,
+            'App\\clasess\\' => 12,
         ),
     );
 
@@ -44,13 +46,31 @@ class ComposerStaticInit4c82e931099e7a625249672c6c41213f
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
+        'Aura\\SqlQuery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/aura/sqlquery/src',
+        ),
         'App\\controllers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/controllers',
         ),
-        'App\\' => 
+        'App\\clasess\\builder\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app',
+            0 => __DIR__ . '/../..' . '/app/classes',
+        ),
+        'App\\clasess\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/classes',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'J' => 
+        array (
+            'JasonGrimes' => 
+            array (
+                0 => __DIR__ . '/..' . '/jasongrimes/paginator/src',
+            ),
         ),
     );
 
@@ -63,6 +83,7 @@ class ComposerStaticInit4c82e931099e7a625249672c6c41213f
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit4c82e931099e7a625249672c6c41213f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit4c82e931099e7a625249672c6c41213f::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit4c82e931099e7a625249672c6c41213f::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit4c82e931099e7a625249672c6c41213f::$classMap;
 
         }, null, ClassLoader::class);

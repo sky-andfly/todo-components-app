@@ -4,4 +4,4 @@ require "../vendor/autoload.php";
 
 
 
-App\Router::rout();
+\App\clasess\Router::rout();
