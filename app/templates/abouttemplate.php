@@ -14,6 +14,7 @@
     <h1>моиЗАМЕТКИ</h1>
     <a href="/">Главная страница</a>
     <a href="/about">О сайте</a>
+    <a href="/about">О сайте</a>
 </header>
 
 <section>

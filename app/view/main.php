@@ -13,9 +13,9 @@
                 <td><?=$post['id']?></td>
                 <td><?=$post['title']?></td>
                 <td>
-                    <a href="view/<?=$post['id']?>" class="info">Открыть</a>
-                    <a href="edit/<?=$post['id']?>" class="edit">Изменить</a>
-                    <a href="delete/<?=$post['id']?>" class="delete">Удалить</a>
+                    <a href="/view/<?=$post['id']?>" class="info">Открыть</a>
+                    <a href="/edit/<?=$post['id']?>" class="edit">Изменить</a>
+                    <a href="/delete/<?=$post['id']?>" class="delete">Удалить</a>
                 </td>
             </tr>
         <?php endforeach;?>
