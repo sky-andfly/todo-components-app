@@ -4,11 +4,13 @@ namespace App\controllers;
 use League\Plates\Engine;
 use App\clasess\builder\QueryBuilder;
 use JasonGrimes\Paginator;
-use \Tamtamchik\SimpleFlash\Flash;
+
+
 
 class pageControllers{
     private $templates;
     private $db;
+
     const viewDir = "../view/";
     const itemsPerPage = 5;
 
@@ -16,9 +18,12 @@ class pageControllers{
     {
         $this->templates = new Engine('../app/templates');
         $this->db = new QueryBuilder();
+
+
     }
 
     public function index(){
+
         $table = "tasks";
         $_SESSION['last_page'] = 1;
         $pagination = $this->pageCount($table, self::itemsPerPage, 1,'/page/(:num)');
@@ -34,6 +39,9 @@ class pageControllers{
     }
     public function add(){
         echo $this->templates->render(self::viewDir . 'add');
+    }
+    public function registerPage(){
+        echo $this->templates->render(self::viewDir . 'register-page');
     }
     public function about(){
         echo $this->templates->render(self::viewDir . 'about');

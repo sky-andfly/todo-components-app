@@ -13,6 +13,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/aura/sqlquery" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jasongrimes/paginator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/tamtamchik/simple-flash" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/delight-im/http" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/delight-im/cookie" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/delight-im/db" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/delight-im/auth" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/delight-im/base64" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
