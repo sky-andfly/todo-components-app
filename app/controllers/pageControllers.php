@@ -4,14 +4,13 @@ namespace App\controllers;
 use League\Plates\Engine;
 use App\clasess\builder\QueryBuilder;
 use JasonGrimes\Paginator;
-
+use \Tamtamchik\SimpleFlash\Flash;
 
 class pageControllers{
     private $templates;
     private $db;
     const viewDir = "../view/";
     const itemsPerPage = 5;
-    private $last_page;
 
     public function __construct()
     {
@@ -50,7 +49,48 @@ class pageControllers{
         $table = "tasks";
         $this->db->delete($table, $vars['id']);
         if (isset($_SESSION['last_page'])){
+            flash()->success("Запись удалена!");
             header("Location: /page/{$_SESSION['last_page']}");
         }
+    }
+    public function view($vars){
+        $result = $this->db->getOneById('tasks', $vars['id']);
+        echo $this->templates->render(self::viewDir . 'view', ['result' => $result]);
+    }
+    public function store(){
+        if (isset($_POST['send'])){
+            if($_POST['title'] == "" || $_POST['text'] == ""){
+                flash()->error("Заполните все поля!");
+                header("Location: /add");exit;
+            }
+            $data = [
+                'title' => $_POST['title'],
+                'text' => $_POST['text']
+            ];
+        }
+        $id = $this->db->add("tasks", $data);
+        flash()->success("Запись добавлена!");
+
+        header("Location: /view/{$id}");
+    }
+    public function edit($vars){
+        $result = $this->db->getOneById('tasks', $vars['id']);
+        echo $this->templates->render(self::viewDir . 'edit', ['post' => $result]);
+    }
+    public function update(){
+        if (isset($_POST['send'])){
+            $id = $_POST['id'];
+            if($_POST['title'] == "" || $_POST['text'] == ""){
+                flash()->error("Заполните все поля!");
+                header("Location: /edit/{$id}");exit;
+            }
+            $data = [
+                'title' => $_POST['title'],
+                'text' => $_POST['text']
+            ];
+        }
+        $this->db->update("tasks",$id, $data);
+        flash()->success("Запись обновлена!");
+        header("Location: /view/{$id}");
     }
 }

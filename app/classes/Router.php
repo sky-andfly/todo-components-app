@@ -12,7 +12,10 @@ class Router{
             $r->addRoute('GET', '/about', ['App\controllers\pageControllers', 'about']);
             $r->addRoute('GET', '/page/{id:\d+}', ['App\controllers\pageControllers', 'page']);
             $r->addRoute('GET', '/delete/{id:\d+}', ['App\controllers\pageControllers', 'delete']);
-
+            $r->addRoute('GET', '/view/{id:\d+}', ['App\controllers\pageControllers', 'view']);
+            $r->addRoute('GET', '/edit/{id:\d+}', ['App\controllers\pageControllers', 'edit']);
+            $r->addRoute('POST', '/store', ['App\controllers\pageControllers', 'store']);
+            $r->addRoute('POST', '/update', ['App\controllers\pageControllers', 'update']);
             // {id} must be a number (\d+)
            // $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
             // The /{title} suffix is optional
