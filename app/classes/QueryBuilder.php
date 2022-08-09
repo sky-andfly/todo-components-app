@@ -24,9 +24,9 @@ class QueryBuilder
         $sth->execute($select->getBindValues());
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function getAllLimit($table, $limit, $offset){
+    public function getAllLimit($table, $limit, $offset, $id){
         $select = $this->queryFactory->newSelect();
-        $select->from($table)->cols(['*'])->limit($limit)->offset($offset);
+        $select->from($table)->cols(['*'])->where("user_id = :id")->bindValue('id', $id)->limit($limit)->offset($offset);
 
 
 

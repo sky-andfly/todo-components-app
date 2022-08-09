@@ -10,9 +10,7 @@ h1{
 }
 header{
     padding: 20px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
+
     align-items: flex-end;
     background-color: rgba(199, 202, 238, 0.31);
     color: #626262;
@@ -209,4 +207,29 @@ section .top{
     display: flex;
     align-items: center;
     gap: 10px;
+}
+form h2{
+    text-align: center;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+form h2 a{
+    color: #0015ff;
+    padding: 0;
+}
+form h2 a:hover{
+    transform: scale(1);
+    text-decoration: underline;
+    color: #0015ff;
+}
+.header__link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__link div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }

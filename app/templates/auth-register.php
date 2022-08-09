@@ -13,28 +13,14 @@
 </head>
 <body>
 <header>
-
-    <div class="header__link">
-        <div>
-            <h1>моиЗАМЕТКИ</h1>
-            <a href="/">Главная страница</a>
-            <a href="/about">О сайте</a>
-        </div>
-        <div>
-            <a href=""><?=$this->e($login)?></a>
-            <a href="" class="/logout">Выйти</a>
-        </div>
-    </div>
+    <h1>моиЗАМЕТКИ</h1>
 </header>
 <div class="flashes">
     <?=flash()->display();;?>
 </div>
 <section>
     <div class="section__content">
-        <form action="index.php" class="index__form" method="post">
-            <input type="text" name="search">
-            <button name="send" type="submit">Поиск</button>
-        </form>
+
 
         <?=$this->section('content')?>
     </div>

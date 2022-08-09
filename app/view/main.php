@@ -1,4 +1,4 @@
-<?php $this->layout('template', ['title' => 'МоиЗаметки']) ?>
+<?php $this->layout('template', ['title' => 'МоиЗаметки', 'login' => $login]) ?>
 
 <a href="/add" class="new">Добавить</a>
 <table>

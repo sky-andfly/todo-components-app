@@ -12,9 +12,15 @@
 <body>
 <header style="background-color: rgb(0 0 4); color: #ffffff;">
     <h1>моиЗАМЕТКИ</h1>
-    <a href="/">Главная страница</a>
-    <a href="/about">О сайте</a>
-    <a href="/about">О сайте</a>
+    <div class="header__link">
+        <div>
+            <a href="/">Главная страница</a>
+            <a href="/about">О сайте</a>
+        </div>
+        <div>
+            <a href="" class="logout">Выйти</a>
+        </div>
+    </div>
 </header>
 
 <section>

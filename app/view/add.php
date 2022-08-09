@@ -1,4 +1,4 @@
-<?php $this->layout('template', ['title' => 'Создать — МоиЗаметки']) ?>
+<?php $this->layout('template', ['title' => 'Создать — МоиЗаметки', 'login' => $login]) ?>
 
 <section>
 

@@ -1,4 +1,4 @@
-<?php $this->layout('template', ['title' => $result['title']]) ?>
+<?php $this->layout('template', ['title' => "Редактировать — {$result['title']} — МоиЗаметки", 'login' => $login]) ?>
 <section>
     <div class="section__content">
         <div class="top">

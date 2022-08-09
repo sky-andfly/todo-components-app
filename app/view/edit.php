@@ -1,5 +1,5 @@
 
-<?php $this->layout('template', ['title' => "Редактировать — {$post['title']} — МоиЗаметки"]) ?>
+<?php $this->layout('template', ['title' => "Редактировать — {$post['title']} — МоиЗаметки", 'login' => $login]) ?>
 
 <section>
 
