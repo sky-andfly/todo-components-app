@@ -24,13 +24,7 @@ class pageControllers{
 
 
     }
-    private function isLogined(){
-        if(!$this->auth->check()){
-            header("Location: /auth");exit;
-        }
 
-
-    }
     public function index(){
         $this->isLogined();
         $table = "tasks";
@@ -66,6 +60,32 @@ class pageControllers{
         $this->isLogined();
         echo $this->templates->render(self::viewDir . 'about', ['login' => $this->auth->getUsername()]);
     }
+    public function user_page(){
+        $this->isLogined();
+
+        $data = [
+            'login' => $this->auth->getUsername(),
+            'user_id' => $this->auth->getUserId()
+        ];
+        echo $this->templates->render(self::viewDir . 'user-page', $data);
+    }
+
+
+    public function view($vars){
+        $this->isLogined();
+        $result = $this->db->getOneById('tasks', $vars['id']);
+        echo $this->templates->render(self::viewDir . 'view', ['result' => $result, 'login' => $this->auth->getUsername()]);
+    }
+
+
+    #post handler && functions to work with
+    private function isLogined(){
+        if(!$this->auth->check()){
+            header("Location: /auth");exit;
+        }
+
+
+    }
     public function pageCount($table, $itemsPerPage, $currentPage,$urlPattern){
         $count = $this->db->getCount($table);
         $totalItems = $count['COUNT(*)'];
@@ -80,11 +100,6 @@ class pageControllers{
             flash()->success("Запись удалена!");
             header("Location: /page/{$_SESSION['last_page']}");
         }
-    }
-    public function view($vars){
-        $this->isLogined();
-        $result = $this->db->getOneById('tasks', $vars['id']);
-        echo $this->templates->render(self::viewDir . 'view', ['result' => $result, 'login' => $this->auth->getUsername()]);
     }
     public function store(){
         if (isset($_POST['send'])){
@@ -165,6 +180,13 @@ class pageControllers{
             die('Too many requests');
         }
         header("Location: /auth");exit;
+    }
+    public function logout(){
+
+        $this->auth->logOut();
+        $this->isLogined();
+
+
     }
 
 }

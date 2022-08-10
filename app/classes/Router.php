@@ -19,6 +19,8 @@ class Router{
             $r->addRoute('GET', '/delete/{id:\d+}', ['App\controllers\pageControllers', 'delete']);
             $r->addRoute('GET', '/view/{id:\d+}', ['App\controllers\pageControllers', 'view']);
             $r->addRoute('GET', '/edit/{id:\d+}', ['App\controllers\pageControllers', 'edit']);
+            $r->addRoute('GET', '/logout', ['App\controllers\pageControllers', 'logout']);
+            $r->addRoute('GET', '/user-page', ['App\controllers\pageControllers', 'user_page']);
 
             $r->addRoute('POST', '/create-user', ['App\controllers\pageControllers', 'create_user']);
             $r->addRoute('POST', '/log-in', ['App\controllers\pageControllers', 'log_in']);

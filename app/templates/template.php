@@ -21,8 +21,8 @@
             <a href="/about">О сайте</a>
         </div>
         <div>
-            <a href=""><?=$this->e($login)?></a>
-            <a href="" class="/logout">Выйти</a>
+            <a href="/user-page"><?=$this->e($login)?></a>
+            <a href="/logout" class="">Выйти</a>
         </div>
     </div>
 </header>
